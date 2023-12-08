@@ -1,3 +1,3 @@
 import './style.scss';
-
-console.log('fds');
+import loadPage from './home-page';
+loadPage();
