@@ -50,15 +50,47 @@ const loadPage = function (){
 
     let weekDay = document.createElement('div');
     weekDay.classList.add('week-day');
-    let dayLabel = document.createElement('label');
-    dayLabel.setAttribute('for', 'monday');
-    dayLabel.textContent = 'Monday to Thursday';
-    hours.appendChild(dayLabel);
-    let weekDayUl = document.createElement('ul');
-    
-    for(i = 0; i < 3; i++) {
+    weekDay.id = 'monday';
+    weekDay.innerHTML = `<label for="monday">Monday to Thrusday</label>
+    <ul id="monday">
+        <li>Lunch: 12:00 PM to 3:00 PM</li>
+        <li>Dinner: 5:00 PM to 10:00 PM</li>
+    </ul>`
+    hours.appendChild(weekDay);
+
+    for(let i = 0; i < 3; i++) {
         weekDay = document.createElement('div');
         weekDay.classList.add('week-day');
+
+        switch(i){
+            case 0:
+            weekDay.id = 'friday'
+            weekDay.innerHTML = `<label for="friday">Friday</label>
+            <ul id="friday">
+                <li>Lunch: 12:00 PM to 3:00 PM</li>
+                <li>Dinner: 5:00 PM to 11:00 PM</li>
+            </ul>`;
+            hours.appendChild(weekDay);
+            break;
+        
+            case 1:
+            weekDay.id = 'saturday';
+            weekDay.innerHTML = `<label for="saturday">Saturday</label>
+            <ul id="saturday">
+                <li>All-Day Dining: 12:00 PM to 11:00 PM</li>
+            </ul>`;
+            hours.appendChild(weekDay);
+            break;
+            
+            case 2:
+            weekDay.id = 'sunday';
+            weekDay.innerHTML = `<label for="sunday">Sunday</label>
+            <ul id="sunday">
+                <li>All-Day Dining: 12:00 PM to 9:00 PM</li>
+            </ul>`;
+            hours.appendChild(weekDay);
+            break;
+        }
     }
 
 
