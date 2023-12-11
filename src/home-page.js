@@ -1,5 +1,9 @@
-const loadPage = function (){
+import loadMenuPage from './menu';
+import loadContactPage from './contact';
+
+const loadHomePage = function (){
     let content = document.querySelector('#content');
+    content.innerHTML = ''
 
     //h1
     let h1 = document.createElement('h1');
@@ -11,6 +15,7 @@ const loadPage = function (){
     content.appendChild(nav);
 
     let homeBtn = document.createElement('button');
+    homeBtn.classList.add('home-btn');
     homeBtn.textContent = 'Home';
     nav.appendChild(homeBtn);
 
@@ -19,16 +24,20 @@ const loadPage = function (){
     nav.appendChild(separator);
     
     let menuBtn = document.createElement('button');
+    menuBtn.classList.add('menu-btn');
     menuBtn.textContent = 'Menu';
     nav.appendChild(menuBtn);
+	menuBtn.addEventListener('click', loadMenuPage);
     
     separator = document.createElement('div');    
     separator.classList.add('separator');
     nav.appendChild(separator)
-
+    
     let contactBtn = document.createElement('button');
+    contactBtn.classList.add('contact-btn');
     contactBtn.textContent = 'Contact';
     nav.appendChild(contactBtn);
+    contactBtn.addEventListener('click', loadContactPage)
 
     //About
     let about = document.createElement('div');
@@ -92,10 +101,7 @@ const loadPage = function (){
             break;
         }
     }
-
-
-    
     console.log(content)
 };
 
-export default loadPage;
+export default loadHomePage;

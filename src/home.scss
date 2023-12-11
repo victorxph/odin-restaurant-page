@@ -1,0 +1,31 @@
+.about{
+    justify-self: center;
+    width: 70%;
+    line-height: 2rem;
+}
+
+.hours{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    h2{
+        position: relative;
+        user-select: none;
+        .emoji{
+            position: absolute;
+            left: -30px;
+        }
+    }
+
+    label{
+        font-weight: bold;
+        position: relative;
+    }
+
+    ul{
+        list-style: none;
+        padding: 0;
+    }
+}

@@ -1,3 +1,7 @@
 import './style.scss';
-import loadPage from './home-page';
-loadPage();
+import './home.scss';
+import './contact.scss';
+
+import loadHomePage from './home-page';
+
+loadHomePage();
